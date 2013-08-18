@@ -10,12 +10,28 @@ template engine.
   * "no template" option.
 * Partials could use the origin and optional a new variable scope.
 
+***TODO***
+
+* [express](http://expressjs.com/) integration
+* (maybe also an simple [Connect](http://www.senchalabs.org/connect/) integration?)
+
+## Work in Process -- Express Integration
+
+```javascript
+app.engine('html', require('Comprise').express); // TODO
+app.set('views', __dirname + '/app/views');
+app.set('view engine', 'html');
+```
+
 ## Example
 
-**content.jade:**
+Just render ```content.jade```, but use the common ```default.jade```
+template which extends the ```layout.jade```.
+
+### Template ```content.jade```
 
 ```jade
-h1 use standard layout
+h1 This content use the standard layout!
 
 div
 	!= partial('partial1')
@@ -23,7 +39,7 @@ div
 	!= partial('partial2.jade')
 ```
 
-**layout.jade:**
+### Layout ```layout.jade```
 
 ```jade
 html
@@ -33,7 +49,7 @@ html
 		!= content()
 ```
 
-**default.jade:**
+### Included layout ```default.jade```
 
 ```jade
 = layout('layout')
@@ -44,15 +60,7 @@ header
 != content()
 ```
 
-
-
-## Installation
-
-TODO As soon as there is a tagged version:
-
-	npm install comprise --production
-
-## API
+### API calls ```example.js```
 
 ```javascript
 var comprise = new Comprise({
@@ -71,6 +79,12 @@ comprise.render('complex', { user: 'me' }, function(err, result) {
 	}
 });
 ```
+
+## Installation
+
+TODO As soon as there is a tagged version:
+
+	npm install comprise --production
 
 ## Run the unit tests
 
