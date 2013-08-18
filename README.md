@@ -17,7 +17,7 @@ var Comprise = require('comprise').Comprise;
 
 var comprise = new Comprise({ engine: 'jade', layout: 'default' });
 
-comprise.render('complex', { user: user }, function(err, result) {
+comprise.render('your jade file', { user: user }, function(err, result) {
 	if (err) {
 		console.error(err);
 	} else {
@@ -26,7 +26,7 @@ comprise.render('complex', { user: user }, function(err, result) {
 });
 ```
 
-More options:
+More options for the constructor:
 
 * ```templateDir```
 * ```layoutDir```
@@ -44,12 +44,14 @@ app.engine('comprise', comprise); // TODO not working yet :D
 app.set('view engine', 'comprise');
 ```
 
+More options see API above.
+
 ## Example
 
 Just render ```content.jade```, but use the common ```default.jade```
 template which extends the ```layout.jade```.
 
-**Template ```content.jade```**
+**```content.jade``` template:**
 
 ```jade
 h1 This content use the standard layout!
@@ -60,7 +62,7 @@ div
 	!= partial('partial2.jade')
 ```
 
-**Layout ```layout.jade```**
+**```layout.jade``` layout:**
 
 ```jade
 html
@@ -70,7 +72,7 @@ html
 		!= content()
 ```
 
-**Included layout ```default.jade```**
+**```default.jade``` included layout:**
 
 ```jade
 = layout('layout')
