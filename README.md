@@ -28,6 +28,7 @@ comprise.render('your jade file', { user: user }, function(err, result) {
 
 More options for the constructor:
 
+* ```extension```
 * ```templateDir```
 * ```layoutDir```
 * ```partialDir```
