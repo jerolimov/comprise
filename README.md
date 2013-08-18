@@ -10,26 +10,37 @@ template engine.
   * "no template" option.
 * Partials could use the origin and optional a new variable scope.
 
-***TODO***
-
-* [express](http://expressjs.com/) integration
-* (maybe also an simple [Connect](http://www.senchalabs.org/connect/) integration?)
-
-## Work in Process -- Express Integration
+## API
 
 ```javascript
 var Comprise = require('comprise').Comprise;
 
-var comprise = new Comprise({
-	engine: 'jade',
-	layout: 'default',
-	templateDir: __dirname + '/../examples/jade',
-	layoutDir: __dirname + '/../examples/jade',
-	partialDir: __dirname + '/../examples/jade'
+var comprise = new Comprise({ engine: 'jade', layout: 'default' });
+
+comprise.render('complex', { user: user }, function(err, result) {
+	if (err) {
+		console.error(err);
+	} else {
+		console.log(result);
+	}
 });
+```
+
+More options:
+
+* ```templateDir```
+* ```layoutDir```
+* ```partialDir```
+
+
+## Work in Process -- [express](http://expressjs.com/) integration
+
+```javascript
+var Comprise = require('comprise').Comprise;
+
+var comprise = new Comprise({ engine: 'jade', layout: 'default' });
 
 app.engine('comprise', comprise); // TODO not working yet :D
-app.set('views', __dirname + '/app/views');
 app.set('view engine', 'comprise');
 ```
 
@@ -38,7 +49,7 @@ app.set('view engine', 'comprise');
 Just render ```content.jade```, but use the common ```default.jade```
 template which extends the ```layout.jade```.
 
-### Template ```content.jade```
+**Template ```content.jade```**
 
 ```jade
 h1 This content use the standard layout!
@@ -49,7 +60,7 @@ div
 	!= partial('partial2.jade')
 ```
 
-### Layout ```layout.jade```
+**Layout ```layout.jade```**
 
 ```jade
 html
@@ -59,7 +70,7 @@ html
 		!= content()
 ```
 
-### Included layout ```default.jade```
+**Included layout ```default.jade```**
 
 ```jade
 = layout('layout')
@@ -70,27 +81,15 @@ header
 != content()
 ```
 
-### API calls ```example.js```
+## How it works
 
-```javascript
-var Comprise = require('comprise').Comprise;
+Comprise provides a simple wrapper around consolidate.js and add four small functions 
+to the variable scope:
 
-var comprise = new Comprise({
-	engine: 'jade',
-	layout: 'default',
-	templateDir: __dirname + '/../examples/jade',
-	layoutDir: __dirname + '/../examples/jade',
-	partialDir: __dirname + '/../examples/jade'
-});
-
-comprise.render('complex', { user: 'me' }, function(err, result) {
-	if (err) {
-		console.error(err);
-	} else {
-		console.log(result);
-	}
-});
-```
+* ```layout(layout)```
+* ```nolayout()```
+* ```content()```
+* ```partial(partialTemplate, partialVariables)```
 
 ## Installation
 
