@@ -23,7 +23,7 @@ describe('jade', function() {
 				if (err) throw err;
 				var expectedResult = fs.readFileSync(__dirname + '/../examples/jade/complex.html').toString();
 
-				result.should.equal(expectedResult);
+				result.should.eql(expectedResult);
 				done();
 			} catch (e) {
 				done(e);
@@ -45,7 +45,7 @@ describe('jade', function() {
 				if (err) throw err;
 				var expectedResult = fs.readFileSync(__dirname + '/../examples/jade/nolayout.html').toString();
 
-				result.should.equal(expectedResult);
+				result.should.eql(expectedResult);
 				done();
 			} catch (e) {
 				done(e);
@@ -65,7 +65,7 @@ describe('jade', function() {
 				if (err) throw err;
 				var expectedResult = fs.readFileSync(__dirname + '/../examples/jade/simple.html').toString();
 
-				result.should.equal(expectedResult);
+				result.should.eql(expectedResult);
 				done();
 			} catch (e) {
 				done(e);
@@ -86,7 +86,7 @@ describe('jade', function() {
 				if (err) throw err;
 				var expectedResult = fs.readFileSync(__dirname + '/../examples/jade/uselayout.html').toString();
 
-				result.should.equal(expectedResult);
+				result.should.eql(expectedResult);
 				done();
 			} catch (e) {
 				done(e);
