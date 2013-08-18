@@ -18,9 +18,19 @@ template engine.
 ## Work in Process -- Express Integration
 
 ```javascript
-app.engine('html', require('Comprise').express); // TODO
+var Comprise = require('comprise').Comprise;
+
+var comprise = new Comprise({
+	engine: 'jade',
+	layout: 'default',
+	templateDir: __dirname + '/../examples/jade',
+	layoutDir: __dirname + '/../examples/jade',
+	partialDir: __dirname + '/../examples/jade'
+});
+
+app.engine('comprise', comprise); // TODO not working yet :D
 app.set('views', __dirname + '/app/views');
-app.set('view engine', 'html');
+app.set('view engine', 'comprise');
 ```
 
 ## Example
@@ -63,6 +73,8 @@ header
 ### API calls ```example.js```
 
 ```javascript
+var Comprise = require('comprise').Comprise;
+
 var comprise = new Comprise({
 	engine: 'jade',
 	layout: 'default',
