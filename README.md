@@ -59,13 +59,15 @@ var comprise = require('comprise');
 
 app.engine('jade', comprise.express({
 	engine: 'jade',
-	layout: 'default',
-	templateDir: __dirname + '/views'
+	layout: 'default'
 }));
 app.set('view engine', 'jade');
 ```
 
 Available options see API section above.
+
+```templateDir``` was automatically set based on the
+[express setting](http://expressjs.com/api.html#app-settings) ```views``` (default ```./views```).
 
 ## Example
 
