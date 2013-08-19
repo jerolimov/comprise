@@ -10,6 +10,13 @@ template engine.
   * "no template" option.
 * Partials could use the origin and optional a new variable scope.
 
+Tested with
+
+* [jade](https://github.com/visionmedia/jade) 
+* [ejs](https://github.com/visionmedia/ejs)
+* [handlebars](https://github.com/wycats/handlebars.js/)
+* [underscore](https://github.com/jashkenas/underscore)
+
 ## API
 
 ```javascript
