@@ -38,6 +38,7 @@
 		"cover": "0.2",
 		"istanbul": "0.1"
 	},
+	"main": "lib",
 	"scripts": {
 		"test": "node_modules/.bin/mocha --reporter spec",
 		"coverjs": "node_modules/.bin/cover run node_modules/mocha/bin/_mocha; node_modules/.bin/cover report; node_modules/.bin/cover report html",
