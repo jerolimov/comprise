@@ -10,12 +10,19 @@ template engine.
   * "no template" option.
 * Partials could use the origin and optional a new variable scope.
 
-Tested with
+Tested with:
 
 * [jade](https://github.com/visionmedia/jade) 
 * [ejs](https://github.com/visionmedia/ejs)
-* [handlebars](https://github.com/wycats/handlebars.js/)
+* [handlebars](https://github.com/wycats/handlebars.js)
 * [underscore](https://github.com/jashkenas/underscore)
+* [swig](https://github.com/paularmstrong/swig)
+
+Doesn't work yet with:
+
+* [haml](https://github.com/visionmedia/haml.js) -- ```! layout('default')``` and ```!= partial('partial1')``` does not work. Support welcome!
+* [mustache](https://github.com/janl/mustache.js) -- ```{{{ layout 'default' }}}``` and ```{{ partial("partial1") }}``` does not work. Support welcome!
+
 
 ## API
 
