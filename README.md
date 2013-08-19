@@ -29,7 +29,11 @@ Doesn't work yet with:
 ```javascript
 var Comprise = require('comprise').Comprise;
 
-var comprise = new Comprise({ engine: 'jade', layout: 'default' });
+var comprise = new Comprise({
+	engine: 'jade',
+	layout: 'default',
+	templateDir: __dirname + '/views'
+});
 
 comprise.render('your jade file', { user: user }, function(err, result) {
 	if (err) {
@@ -40,26 +44,28 @@ comprise.render('your jade file', { user: user }, function(err, result) {
 });
 ```
 
-More options for the constructor:
+**Available options:**
 
-* ```extension```
-* ```templateDir```
-* ```layoutDir```
-* ```partialDir```
+* ```engine``` - See [consolidate.js](https://github.com/visionmedia/consolidate.js) engine list
+* ```extension``` - file name extension, default is simular to ```engine```
+* ```templateDir``` - Required
+* ```layoutDir``` - Optional, default is ```$templateDir/_layout```
+* ```partialDir``` - Optional, default is ```$templateDir/_partials```
 
-
-## Work in Process -- [express](http://expressjs.com/) integration
+## [express](http://expressjs.com/) framework integration
 
 ```javascript
-var Comprise = require('comprise').Comprise;
+var comprise = require('comprise');
 
-var comprise = new Comprise({ engine: 'jade', layout: 'default' });
-
-app.engine('comprise', comprise); // TODO not working yet :D
-app.set('view engine', 'comprise');
+app.engine('jade', comprise.express({
+	engine: 'jade',
+	layout: 'default',
+	templateDir: __dirname + '/views'
+}));
+app.set('view engine', 'jade');
 ```
 
-More options see API above.
+Available options see API section above.
 
 ## Example
 
@@ -101,7 +107,7 @@ header
 ## How it works
 
 Comprise provides a simple wrapper around consolidate.js and add four small functions 
-to the variable scope:
+to the local template variables:
 
 * ```layout(layout)```
 * ```nolayout()```
