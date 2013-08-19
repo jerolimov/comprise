@@ -47,6 +47,7 @@ comprise.render('your jade file', { user: user }, function(err, result) {
 **Available options:**
 
 * ```engine``` - See [consolidate.js](https://github.com/visionmedia/consolidate.js) engine list
+* ```layout``` - Optional default layout
 * ```extension``` - file name extension, default is simular to ```engine```
 * ```templateDir``` - Required
 * ```layoutDir``` - Optional, default is ```$templateDir/_layout```
