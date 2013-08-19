@@ -10,7 +10,10 @@
 		"partial",
 		"partials"
 	],
-	"author": "Christoph Jerolimov <christoph@jerolimov.de>",
+	"author": {
+		"name": "Christoph Jerolimov",
+		"email": "jerolimov@gmail.com"
+	},
 	"license": "MIT",
 	"homepage": "https://github.com/jerolimov/comprise",
 	"repository": {
