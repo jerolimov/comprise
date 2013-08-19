@@ -3,6 +3,6 @@
 		<title>comprise</title>
 	</head>
 	<body>
-		{{ content() }}
+		{% autoescape false %}{{ content() }}{% endautoescape %}
 	</body>
 </html>

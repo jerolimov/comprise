@@ -1,8 +1,8 @@
 {{ layout('default') }}<h1>use layout</h1>
 
 <div>
-	{{ partial('partial1') }}
+	{% autoescape false %}{{ partial('partial1') }}{% endautoescape %}
 </div>
 <div>
-	{{ partial('partial2.swig') }}
+	{% autoescape false %}{{ partial('partial2.swig') }}{% endautoescape %}
 </div>

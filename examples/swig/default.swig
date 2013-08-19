@@ -4,4 +4,4 @@
 	<nav>navigation code</nav>
 </header>
 
-{{ content() }}
+{% autoescape false %}{{ content() }}{% endautoescape %}

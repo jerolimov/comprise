@@ -3,7 +3,7 @@
 		<h1>comprise</h1>
 
 		<div>
-			{{ partial('partial1') }}
+			{% autoescape false %}{{ partial('partial1') }}{% endautoescape %}
 		</div>
 	</body>
 </html>
