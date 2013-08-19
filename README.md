@@ -1,5 +1,7 @@
 # Comprise add layout and partial support to consolidate.js!
 
+[![Build Status](https://travis-ci.org/jerolimov/comprise.png?branch=master)](https://travis-ci.org/jerolimov/comprise)
+
 Comprise add layout and partial support to the great
 [consolidate.js](https://github.com/visionmedia/consolidate.js)
 template engine.
