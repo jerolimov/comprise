@@ -119,8 +119,6 @@ to the local template variables:
 
 ## Installation
 
-TODO As soon as there is a tagged version:
-
 	npm install comprise --production
 
 ## Run the unit tests
