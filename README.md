@@ -1,16 +1,25 @@
-# Comprise add layout and partial support to consolidate.js!
+# comprise [![Build Status](https://travis-ci.org/jerolimov/comprise.png?branch=master)](https://travis-ci.org/jerolimov/comprise)
 
-[![Build Status](https://travis-ci.org/jerolimov/comprise.png?branch=master)](https://travis-ci.org/jerolimov/comprise)
+> Add layout and partial support to [consolidate.js](https://github.com/visionmedia/consolidate.js)!
 
-Comprise add layout and partial support to the great
-[consolidate.js](https://github.com/visionmedia/consolidate.js)
-template engine.
+This project was insprired by all the small projects which wraps a single ```template engine``` to
+integratate these into the [express](http://expressjs.com/). Many of them exists only because they
+add the missing layout and partial support which is not provided by
+[consolidate.js](https://github.com/visionmedia/consolidate.js).
 
-* Add layout support to your templates, incl.
-  * Default templates
-  * Template hierarchies
-  * "no template" option.
-* Partials could use the origin and optional a new variable scope.
+In many cases this is also fine because the most template engines includes already a simple
+```extend``` and ```include``` mechanism. If not, or if you are interessted in mixing your templates
+give this project a try.
+
+Comprise add layout and partial support to the great [consolidate.js](https://github.com/visionmedia/consolidate.js)
+template engine. Means in general that all template engines which could call functions from the template
+ifself profits from the following functions:
+
+* Add layout and partial support to your templates.
+* Supports layout hierarchies (post extends default extends layout).
+* Allow setting a default template and override/disable this default in the template itself.
+* Partials use the origin variable by default. Supports also a new scope.
+* Support for mixing template engines (include ejb in jade or vise versa).
 
 Tested with:
 
