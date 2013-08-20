@@ -123,10 +123,10 @@ header
 Comprise provides a simple wrapper around consolidate.js and add four small functions 
 to the local template variables:
 
-* ```layout(layout)```
-* ```nolayout()```
-* ```content()```
-* ```partial(partialTemplate, partialVariables)```
+* ```layout(layout)``` adds a layout to the current template. Each call adds one to the layout hierachy. To replace a default layout call nolayout first.
+* ```nolayout()``` removes a default layout for the current template. You could set another layout with layout.
+* ```content()``` need to be called in a layout to insert the surrounded template.
+* ```partial(partialTemplate[, partialVariables])``` could be used to include other templates. In the common case the partial template name don't need a file extension. If a extension is provided a different engine could be used.
 
 ## Installation
 
@@ -136,3 +136,7 @@ to the local template variables:
 
 	npm install --save-dev
 	npm test
+	
+	# For code coverage
+	npm run-script coverjs; open cover_html/index.html
+	npm run-script istanbul; open coverage/lcov-report/index.html
