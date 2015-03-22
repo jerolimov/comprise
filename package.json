@@ -1,7 +1,7 @@
 {
 	"name": "comprise",
 	"description": "Add layout and partial support to consolidate.js!",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"keywords": [
 		"template",
 		"engine",
