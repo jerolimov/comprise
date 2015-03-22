@@ -21,22 +21,22 @@
 		"url": "https://github.com/jerolimov/comprise.git"
 	},
 	"dependencies": {
-		"consolidate": "0.9"
+		"consolidate": "0.11"
 	},
 	"optionalDependencies": {
-		"jade": "0.34",
-		"ejs": "0.8",
-		"handlebars": "1.0",
-		"underscore": "1.5",
-		"mustache": "0.7",
-		"swig": "1.0"
+		"jade": "1.9",
+		"ejs": "2.3",
+		"handlebars": "3.0",
+		"underscore": "1.8",
+		"mustache": "1.1",
+		"swig": "1.4"
 	},
 	"devDependencies": {
-		"mocha": "1.12",
-		"should": "1.2",
-		"sinon": "1.7",
+		"mocha": "2.2",
+		"should": "5.2",
+		"sinon": "1.14",
 		"cover": "0.2",
-		"istanbul": "0.1"
+		"istanbul": "0.3"
 	},
 	"main": "lib",
 	"scripts": {
