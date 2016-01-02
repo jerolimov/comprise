@@ -1,47 +1,50 @@
 {
-	"name": "comprise",
-	"description": "Add layout and partial support to consolidate.js!",
-	"version": "0.2.0",
-	"keywords": [
-		"template",
-		"engine",
-		"view",
-		"layout",
-		"partial",
-		"partials"
-	],
-	"author": {
-		"name": "Christoph Jerolimov",
-		"email": "jerolimov@gmail.com"
-	},
-	"license": "MIT",
-	"homepage": "https://github.com/jerolimov/comprise",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jerolimov/comprise.git"
-	},
-	"dependencies": {
-		"consolidate": "0.11"
-	},
-	"optionalDependencies": {
-		"jade": "1.9",
-		"ejs": "2.3",
-		"handlebars": "3.0",
-		"underscore": "1.8",
-		"mustache": "1.1",
-		"swig": "1.4"
-	},
-	"devDependencies": {
-		"mocha": "2.2",
-		"should": "5.2",
-		"sinon": "1.14",
-		"cover": "0.2",
-		"istanbul": "0.3"
-	},
-	"main": "lib",
-	"scripts": {
-		"test": "node_modules/.bin/mocha --reporter spec",
-		"coverjs": "node_modules/.bin/cover run node_modules/mocha/bin/_mocha; node_modules/.bin/cover report; node_modules/.bin/cover report html",
-		"istanbul": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha"
-	}
+  "name": "comprise",
+  "description": "Add layout and partial support to consolidate.js!",
+  "version": "0.2.0",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter spec",
+    "coverjs": "node_modules/.bin/cover run node_modules/mocha/bin/_mocha; node_modules/.bin/cover report; node_modules/.bin/cover report html",
+    "istanbul": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha"
+  },
+  "author": {
+    "name": "Christoph Jerolimov",
+    "email": "jerolimov@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerolimov/comprise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jerolimov/comprise/issues"
+  },
+  "homepage": "https://github.com/jerolimov/comprise#readme",
+  "keywords": [
+    "template",
+    "engine",
+    "view",
+    "layout",
+    "partial",
+    "partials"
+  ],
+  "dependencies": {
+    "consolidate": "^0.13.1"
+  },
+  "optionalDependencies": {
+    "jade": "1.9",
+    "ejs": "2.3",
+    "handlebars": "3.0",
+    "underscore": "1.8",
+    "mustache": "1.1",
+    "swig": "1.4"
+  },
+  "devDependencies": {
+    "cover": "0.2",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "should": "^8.0.2",
+    "sinon": "^1.17.2"
+  }
 }
