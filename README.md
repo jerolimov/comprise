@@ -1,19 +1,12 @@
-# comprise [![Build Status](https://travis-ci.org/jerolimov/comprise.png?branch=master)](https://travis-ci.org/jerolimov/comprise)
+# comprise [![Build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url] [![Dependency Status][dependency-image]][dependency-url]
 
 > Add layout and partial support to [consolidate.js](https://github.com/visionmedia/consolidate.js)!
 
-This project was insprired by all the small projects which wraps a single ```template engine``` to
-integratate these into the [express](http://expressjs.com/). Many of them exists only because they
-add the missing layout and partial support which is not provided by
-[consolidate.js](https://github.com/visionmedia/consolidate.js).
+This project was inspired by all the small projects which wraps a single ```template engine``` to integrate these into the [express](http://expressjs.com/). Many of them exists only because they add the missing layout and partial support which is not provided by [consolidate.js](https://github.com/visionmedia/consolidate.js).
 
-In many cases this is also fine because the most template engines includes already a simple
-```extend``` and ```include``` mechanism. If not, or if you are interessted in mixing your templates
-give this project a try.
+In many cases this is also fine because the most template engines includes already a simple ```extend``` and ```include``` mechanism. If not, or if you are interested in mixing your templates give this project a try.
 
-Comprise add layout and partial support to the great [consolidate.js](https://github.com/visionmedia/consolidate.js)
-template engine. Means in general that all template engines which could call functions from the template
-ifself profits from the following functions:
+Comprise add layout and partial support to the great [consolidate.js](https://github.com/visionmedia/consolidate.js) template engine. Means in general that all template engines which could call functions from the template itself profits from the following functions:
 
 * Add layout and partial support to your templates.
 * Supports layout hierarchies (post extends default extends layout).
@@ -23,7 +16,7 @@ ifself profits from the following functions:
 
 Tested with:
 
-* [jade](https://github.com/visionmedia/jade) 
+* [jade](https://github.com/visionmedia/jade)
 * [ejs](https://github.com/visionmedia/ejs)
 * [handlebars](https://github.com/wycats/handlebars.js)
 * [underscore](https://github.com/jashkenas/underscore)
@@ -33,7 +26,6 @@ Doesn't work yet with:
 
 * [haml](https://github.com/visionmedia/haml.js) -- ```! layout('default')``` and ```!= partial('partial1')``` does not work. Support welcome!
 * [mustache](https://github.com/janl/mustache.js) -- ```{{{ layout 'default' }}}``` and ```{{ partial("partial1") }}``` does not work. Support welcome!
-
 
 ## API
 
@@ -120,10 +112,9 @@ header
 
 ## How it works
 
-Comprise provides a simple wrapper around consolidate.js and add four small functions 
-to the local template variables:
+Comprise provides a simple wrapper around consolidate.js and add four small functions to the local template variables:
 
-* ```layout(layout)``` adds a layout to the current template. Each call adds one to the layout hierachy. To replace a default layout call nolayout first.
+* ```layout(layout)``` adds a layout to the current template. Each call adds one to the layout hierarchy. To replace a default layout call nolayout first.
 * ```nolayout()``` removes a default layout for the current template. You could set another layout with layout.
 * ```content()``` need to be called in a layout to insert the surrounded template.
 * ```partial(partialTemplate[, partialVariables])``` could be used to include other templates. In the common case the partial template name don't need a file extension. If a extension is provided a different engine could be used.
@@ -136,7 +127,14 @@ to the local template variables:
 
 	npm install --save-dev
 	npm test
-	
+
 	# For code coverage
 	npm run-script coverjs; open cover_html/index.html
 	npm run-script istanbul; open coverage/lcov-report/index.html
+
+[travis-image]: https://img.shields.io/travis/jerolimov/comprise/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/jerolimov/comprise
+[coveralls-image]: https://img.shields.io/coveralls/jerolimov/comprise/master.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/jerolimov/comprise
+[dependency-image]: http://img.shields.io/david/jerolimov/comprise.svg?style=flat-square
+[dependency-url]: https://david-dm.org/jerolimov/comprise
